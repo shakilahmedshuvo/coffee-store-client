@@ -15,6 +15,7 @@ const AddCoffee = () => {
         const category = form.category.value;
         const details = form.details.value;
         const photo = form.photo.value;
+
         const newCoffee = { name, quantity, supplier, taste, category, details, photo }
         console.log(newCoffee);
 
@@ -32,7 +33,7 @@ const AddCoffee = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'User Added Successfully',
+                        text: 'Coffee Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
