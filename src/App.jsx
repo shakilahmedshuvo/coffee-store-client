@@ -1,10 +1,13 @@
 import { useLoaderData } from 'react-router-dom'
 import './App.css'
 import CoffeeCart from './components/CoffeeCart';
+import { useState } from 'react';
 
 function App() {
   // load data form the server
-  const coffees = useLoaderData();
+  const loadedCoffees = useLoaderData();
+  const [coffees, setCoffees] = useState(loadedCoffees);
+
   return (
     <div className='m-20'>
       <h1 className='text-6xl my-20 text-center text-purple-600'>
@@ -15,6 +18,8 @@ function App() {
           coffees.map(coffee => <CoffeeCart
             key={coffee._id}
             coffee={coffee}
+            coffees={coffees}
+            setCoffees={setCoffees}
           ></CoffeeCart>)
         }
       </div>
